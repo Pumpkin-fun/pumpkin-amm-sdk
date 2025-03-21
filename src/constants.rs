@@ -1,0 +1,1 @@
+pub const MAX_FEE_BASIS_POINTS: u64 = 100_00;
