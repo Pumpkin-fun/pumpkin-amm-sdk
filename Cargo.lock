@@ -1862,6 +1862,7 @@ dependencies = [
 [[package]]
 name = "jupiter-amm-interface"
 version = "0.4.6"
+source = "git+https://github.com/Pumpkin-fun/jupiter-amm-interface.git#e1f90118ab62c750f8b4a3c5c56728e70c5f11e3"
 dependencies = [
  "ahash 0.8.11",
  "anyhow",

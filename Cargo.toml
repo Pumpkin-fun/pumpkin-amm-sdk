@@ -8,5 +8,4 @@ anchor-lang = "0.30.1"
 anchor-spl = "0.30.1"
 solana-sdk = "2.0.0"
 anyhow = "1.0.86"
-#jupiter-amm-interface = { git = "https://github.com/jup-ag/jupiter-amm-interface.git", rev = "662097e2cf205f0ea2ff9543f0adbfba61ba415d" }
-jupiter-amm-interface = { path = "./jupiter-amm-interface" }
+jupiter-amm-interface = { git = "https://github.com/Pumpkin-fun/jupiter-amm-interface.git" }
