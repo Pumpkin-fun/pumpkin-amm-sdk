@@ -67,7 +67,7 @@ impl Amm for PumpkinSwap {
         let mut bounding_curve_data = try_get_account_data(account_map, &self.key)?;
         self.state = BondingCurve::try_deserialize(&mut bounding_curve_data)?;
 
-        let mut global_config_data = try_get_account_data(account_map, &self.program_id)?;
+        let mut global_config_data = try_get_account_data(account_map, &get_global_config_address(&self.program_id))?;
         let config = GlobalConfig::try_deserialize(&mut global_config_data)?;
         self.swap_fee_rate_bps = config.swap_fee_rate_bps;
         self.index_fund_recipient = config.index_fund_recipient;
