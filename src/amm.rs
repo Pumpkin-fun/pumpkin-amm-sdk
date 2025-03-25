@@ -56,7 +56,9 @@ impl Amm for PumpkinSwap {
     }
 
     fn get_reserve_mints(&self) -> Vec<Pubkey> {
-        vec![self.state.token]
+        //test_harness expect two mints
+        //pumpkin all pools are with native SOL => SOL/Spl token
+        vec![pubkey!("So11111111111111111111111111111111111111112"), self.state.token]
     }
 
     fn get_accounts_to_update(&self) -> Vec<Pubkey> {
