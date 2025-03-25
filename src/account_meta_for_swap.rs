@@ -1,7 +1,9 @@
-use anchor_lang::prelude::{AccountMeta, Pubkey};
+use anchor_lang::prelude::{AccountMeta, Pubkey, pubkey};
 use anchor_lang::solana_program::system_program::ID as SYSTEM_PROGRAM_ID;
 use anchor_spl::associated_token::ID as ASSOCIATED_TOKEN_PROGRAM_ID;
 use anchor_spl::token::ID as TOKEN_PROGRAM_ID;
+
+use crate::ID;
 
 #[derive(Copy, Clone, Debug)]
 pub struct SwapSolForToken {
@@ -27,6 +29,8 @@ impl From<SwapSolForToken> for Vec<AccountMeta> {
             AccountMeta::new_readonly(TOKEN_PROGRAM_ID, false),
             AccountMeta::new_readonly(ASSOCIATED_TOKEN_PROGRAM_ID, false),
             AccountMeta::new_readonly(SYSTEM_PROGRAM_ID, false),
+            AccountMeta::new_readonly(pubkey!("DjPaLM78k6oELVNbDTBLzJeaMxMubcqv5ewcgCCpWasC"), false), //event authority
+            AccountMeta::new_readonly(ID, false),
         ]
     }
 }
@@ -59,6 +63,8 @@ impl From<SwapTokenForSol> for Vec<AccountMeta> {
             AccountMeta::new_readonly(TOKEN_PROGRAM_ID, false),
             AccountMeta::new_readonly(ASSOCIATED_TOKEN_PROGRAM_ID, false),
             AccountMeta::new_readonly(SYSTEM_PROGRAM_ID, false),
+            AccountMeta::new_readonly(pubkey!("DjPaLM78k6oELVNbDTBLzJeaMxMubcqv5ewcgCCpWasC"), false), //event authority
+            AccountMeta::new_readonly(ID, false),
         ]
     }
 }
